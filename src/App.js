@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-import {Frame, Day, Header, Button, Body, Column, WorkBlock, Hours, BodyWork, FooterBlock} from "./StComponents"
+import {Frame, Day, Header, Button, Body, Column, WorkBlock, Hours, BodyWork, FooterBlock, HeaderBlock} from "./StComponents"
 import Workarea from './Workarea';
 
 function App() {
@@ -85,8 +85,8 @@ function App() {
   return (
     <Frame>
       <Header initial ref ={wrapperRef}>
-        <div>Interview Calendar</div>
-        <div onClick={plusButton}>+</div>
+        <HeaderBlock>Interview Calendar</HeaderBlock>
+        <HeaderBlock onClick={plusButton}>+</HeaderBlock>
       </Header>
       <Header>
         <Column></Column>

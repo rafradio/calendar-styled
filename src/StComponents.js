@@ -79,10 +79,16 @@ const WorkBlock = styled.div`
     border: ${(props) => (props.hours && 'none') || '0.5px solid #f5f6fa'};
     transform: ${(props) => (props.hours && 'translateY(50%)') || 'translateY(0)'};
 `
+
+const HeaderBlock = styled.div`
+    cursor: pointer;
+`
+
 const FooterBlock = styled.div`
     display: ${(props) => (props.deleteBtn && 'none') || 'flex'};
+    cursor: pointer;
 `
 
 
 
-export {Frame, Day, Header, Button, Body, Column, WorkBlock, Hours, BodyWork, FooterBlock};
+export {Frame, Day, Header, Button, Body, Column, WorkBlock, Hours, BodyWork, FooterBlock, HeaderBlock};
