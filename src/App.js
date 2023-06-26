@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-import {Frame, Day, Header, Button, Body, Column, WorkBlock, Hours, BodyWork, FooterBlock, HeaderBlock} from "./StComponents"
+import {Frame, Day, Header, Button, Body, Column, WorkBlock, Hours, BodyWork, FooterBlock, HeaderBlock, Months} from "./StComponents"
 import Workarea from './Workarea';
 
 function App() {
@@ -125,9 +125,9 @@ function App() {
         <Column></Column>
         <Body initial>
           <Button key={'1'} onClick={() => setDate(new Date(year, month, day - 7))}>{'<'}</Button>
-          <div>
+          <Months>
             {MONTHS[month]} {year}
-          </div>
+          </Months>
           <Button key={'2'} onClick={() => setDate(new Date(year, month, day + 7))}>{'>'}</Button>
         </Body>
       </Header>

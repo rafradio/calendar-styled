@@ -33,6 +33,15 @@ const Header = styled.div`
 
 const Button = styled.div`
     cursor: pointer;
+    @media only screen and (min-device-width: 320px) and (max-device-height: 812px) {
+        font-size: 28px;
+    }
+`;
+
+const Months = styled.div`
+    @media only screen and (min-device-width: 320px) and (max-device-height: 812px) {
+        font-size: 28px;
+    }
 `;
 
 const Body = styled.div`
@@ -86,12 +95,15 @@ const WorkBlock = styled.div`
     cursor: pointer;
     font-size: 18px;
     padding: ${(props) => (props.hours && '0') || '2px'};
+    color: ${(props) => (props.hours && '#cdcefd') || 'black'};
     background-color: #ffffff;  
     background-clip: ${(props) => (props.hours && 'border-box') || 'content-box'};
     border: ${(props) => (props.hours && 'none') || '0.5px solid #f5f6fa'};
     transform: ${(props) => (props.hours && 'translateY(50%)') || 'translateY(0)'};
     @media only screen and (min-device-width: 320px) and (max-device-height: 812px) {
         font-size: 28px;
+        border: ${(props) => (props.hours && 'none') || '1px solid #e3e4fd'};
+        color: ${(props) => (props.hours && '#bfc0fe') || 'black'};
     }
 `
 
@@ -100,7 +112,7 @@ const HeaderBlock = styled.div`
     font-size: ${(props) => (props.plus && '24px' || '18px')};
     color: ${(props) => (props.plus && 'red') || 'black'};
     @media only screen and (min-device-width: 320px) and (max-device-height: 812px) {
-        font-size: ${(props) => (props.plus && '28px' || '22px')};
+        font-size: ${(props) => (props.plus && '38px' || '28px')};
     }
 `
 
@@ -112,4 +124,4 @@ const FooterBlock = styled.div`
 
 
 
-export {Frame, Day, Header, Button, Body, Column, WorkBlock, Hours, BodyWork, FooterBlock, HeaderBlock};
+export {Frame, Day, Header, Button, Body, Column, WorkBlock, Hours, BodyWork, FooterBlock, HeaderBlock, Months};
