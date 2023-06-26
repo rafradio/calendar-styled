@@ -85,34 +85,34 @@ function App() {
 
   return (
     <Frame>
-      <Header initial ref ={wrapperRef}>
-        <HeaderBlock>Interview Calendar</HeaderBlock>
-        <HeaderBlock onClick={plusButton}>+</HeaderBlock>
+      <Header key={'1'} initial ref ={wrapperRef}>
+        <HeaderBlock key={'1'}>Interview Calendar</HeaderBlock>
+        <HeaderBlock key={'2'} onClick={plusButton}>+</HeaderBlock>
       </Header>
-      <Header>
+      <Header key={'2'}>
         <Column></Column>
         <Body initial>
           {DAYS_OF_THE_WEEK.map((d) => (
-            <Day key={d}>
+            <Day key={d.toString()}>
               {d}
             </Day>
           ))}
         </Body>
       </Header>
-      <Header>
+      <Header key={'3'}>
         <Column></Column>
         <Body initial>
           {week.map(i => {
                   const todayCheck = new Date();
                   if ((i == todayCheck.getDate() && month == todayCheck.getMonth())) {
                     return (
-                      <Day today key={i}>
+                      <Day today key={i.toString()}>
                         <strong>{i}</strong>
                       </Day>
                     );
                   } else {
                     return (
-                      <Day key={i}>
+                      <Day key={i.toString()}>
                         <strong>{i}</strong>
                       </Day>
                     );
@@ -120,20 +120,20 @@ function App() {
           })}
         </Body>
       </Header>
-      <Header>
+      <Header key={'4'}>
         <Column></Column>
         <Body initial>
-          <Button onClick={() => setDate(new Date(year, month, day - 7))}>{'<'}</Button>
+          <Button key={'1'} onClick={() => setDate(new Date(year, month, day - 7))}>{'<'}</Button>
           <div>
             {MONTHS[month]} {year}
           </div>
-          <Button onClick={() => setDate(new Date(year, month, day + 7))}>{'>'}</Button>
+          <Button key={'2'} onClick={() => setDate(new Date(year, month, day + 7))}>{'>'}</Button>
         </Body>
       </Header>
       <Workarea giveRef={wrapperRef} workBgrnd={workBgrnd} data={interviews}></Workarea>
-      <Header initial>
-        <FooterBlock>Today</FooterBlock>
-        <FooterBlock deleteBtn ref={deleteRef} onClick={() => deleteInterview(interwiewToDelete)}>Delete</FooterBlock>
+      <Header key={'5'} initial>
+        <FooterBlock key={'1'}>Today</FooterBlock>
+        <FooterBlock key={'2'} deleteBtn ref={deleteRef} onClick={() => deleteInterview(interwiewToDelete)}>Delete</FooterBlock>
       </Header>
     </Frame>
     

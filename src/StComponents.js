@@ -7,6 +7,9 @@ const Frame = styled.div`
     border: 1px solid lightgrey;
     box-shadow: 2px 2px 2px #eee;
     overflow: hidden;
+    @media only screen and ${devices.md} {
+        width: 90%;
+    }
 `;
 
 const Column = styled.div`
@@ -23,8 +26,6 @@ const Header = styled.div`
     justify-content: space-between;
     background-color: ${(props) => (props.initial && '#ffffff') || '#f5f6fa'};
     height: ${(props) => (props.initial && '9%') || '6%'};
-    @media only screen and ${devices.xs} {
-        font-size: 28px;
     }
 `;
 
@@ -77,11 +78,15 @@ const WorkBlock = styled.div`
     align-items: center;
     justify-content: center;
     cursor: pointer;
+    font-size: 18px;
     padding: ${(props) => (props.hours && '0') || '2px'};
     background-color: #ffffff;  
     background-clip: ${(props) => (props.hours && 'border-box') || 'content-box'};
     border: ${(props) => (props.hours && 'none') || '0.5px solid #f5f6fa'};
     transform: ${(props) => (props.hours && 'translateY(50%)') || 'translateY(0)'};
+    @media only screen and ${devices.xs} {
+        font-size: 28px;
+    }
 `
 
 const HeaderBlock = styled.div`
