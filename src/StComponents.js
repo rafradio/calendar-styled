@@ -10,6 +10,9 @@ const Frame = styled.div`
     @media only screen and ${devices.md} {
         width: 90%;
     }
+    @media only screen and (max-width : 375px) and (max-height : 812px) {
+        height: 90%;
+    }
 `;
 
 const Column = styled.div`
@@ -84,7 +87,7 @@ const WorkBlock = styled.div`
     background-clip: ${(props) => (props.hours && 'border-box') || 'content-box'};
     border: ${(props) => (props.hours && 'none') || '0.5px solid #f5f6fa'};
     transform: ${(props) => (props.hours && 'translateY(50%)') || 'translateY(0)'};
-    @media only screen and (device-width : 375px) and (device-height : 812px) {
+    @media only screen and (max-width : 375px) and (max-height : 812px) {
         font-size: 28px;
     }
 `
