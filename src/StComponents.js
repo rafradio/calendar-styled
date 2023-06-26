@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
 
 const Frame = styled.div`
-    width: 457px;
+    width: 740px;
     height: 100%;
     border: 1px solid lightgrey;
     box-shadow: 2px 2px 2px #eee;
@@ -9,7 +9,7 @@ const Frame = styled.div`
 `;
 
 const Column = styled.div`
-    width: 57px;
+    width: 12.4%;
     height: 40px;
 `;
 
@@ -29,7 +29,7 @@ const Button = styled.div`
 `;
 
 const Body = styled.div`
-    width: ${(props) => (props.initial && '400px') || '100%'};
+    width: ${(props) => (props.initial && '87.6%') || '100%'};
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
@@ -41,7 +41,7 @@ const Hours = styled.div`
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    width: 14.2%;
+    width: 12.4%;
     height: 100%;
 `
 
@@ -49,7 +49,7 @@ const BodyWork = styled.div`
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    width: 85.8%;
+    width: 87.6%;
     height: 100%;
     
 `;
