@@ -7,10 +7,10 @@ const Frame = styled.div`
     border: 1px solid lightgrey;
     box-shadow: 2px 2px 2px #eee;
     overflow: hidden;
-    @media only screen and ${devices.md} {
+    @media screen and ${devices.md} {
         width: 90%;
     }
-    @media only screen and (max-width : 375px) and (max-height : 812px) {
+    @media screen and (min-width: 340px) and (max-width: 700px) {
         height: 90%;
     }
 `;
@@ -87,7 +87,7 @@ const WorkBlock = styled.div`
     background-clip: ${(props) => (props.hours && 'border-box') || 'content-box'};
     border: ${(props) => (props.hours && 'none') || '0.5px solid #f5f6fa'};
     transform: ${(props) => (props.hours && 'translateY(50%)') || 'translateY(0)'};
-    @media only screen and (max-width : 375px) and (max-height : 812px) {
+    @media screen and (min-width: 340px) and (max-width: 700px) {
         font-size: 28px;
     }
 `
