@@ -132,7 +132,7 @@ function App() {
         </Body>
       </Header>
       <Workarea giveRef={wrapperRef} workBgrnd={workBgrnd} data={interviews}></Workarea>
-      <Header key={'5'} initial>
+      <Header key={'5'} initial footer>
         <FooterBlock key={'1'} onClick={() => setDate(new Date())}>Today</FooterBlock>
         <FooterBlock key={'2'} deleteBtn ref={deleteRef} onClick={() => deleteInterview(interwiewToDelete)}>Delete</FooterBlock>
       </Header>

@@ -29,6 +29,7 @@ const Header = styled.div`
     justify-content: space-between;
     background-color: ${(props) => (props.initial && '#ffffff') || '#f5f6fa'};
     height: ${(props) => (props.initial && '9%') || '6%'};
+    background-color: ${(props) => (props.footer && '#f5f6fa')};
 `;
 
 const Button = styled.div`
