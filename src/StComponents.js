@@ -120,6 +120,10 @@ const FooterBlock = styled.div`
     display: ${(props) => (props.deleteBtn && 'none') || 'flex'};
     cursor: pointer;
     color: red;
+    font-size: 18px;
+    @media only screen and (min-device-width: 320px) and (max-device-height: 812px) {
+        font-size: 28px;
+    }
 `
 
 
