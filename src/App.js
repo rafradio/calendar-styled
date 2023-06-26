@@ -79,6 +79,7 @@ function App() {
 
   const deleteInterview = (indexToDelete) => {
     childrens[indexToDelete].style.backgroundColor = "transparent";
+    deleteRef.current.style.display = 'none';
     setInterviews(interviews.filter(item => item !== indexToDelete));
   }
 

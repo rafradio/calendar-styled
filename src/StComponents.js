@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components';
+import { devices } from './devices';
 
 const Frame = styled.div`
     width: 740px;
@@ -21,7 +22,10 @@ const Header = styled.div`
     align-items: center;
     justify-content: space-between;
     background-color: ${(props) => (props.initial && '#ffffff') || '#f5f6fa'};
-    height: ${(props) => (props.initial && '9%') || '40px'}
+    height: ${(props) => (props.initial && '9%') || '6%'};
+    @media only screen and ${devices.xs} {
+        font-size: 28px;
+    }
 `;
 
 const Button = styled.div`
@@ -34,7 +38,7 @@ const Body = styled.div`
     justify-content: space-between;
     flex-wrap: wrap;
     overflow-y: ${(props) => (props.workarea && 'scroll') || 'hidden'};
-    height: ${(props) => (props.workarea && '65%') || 'auto'};
+    height: ${(props) => (props.workarea && '63%') || 'auto'};
 `;
 
 const Hours = styled.div`
@@ -56,7 +60,7 @@ const BodyWork = styled.div`
 
 const Day = styled.div`
     width: 14.2%;
-    height: 40px;
+    height: 7%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -68,7 +72,7 @@ const Day = styled.div`
 
 const WorkBlock = styled.div`
     width: ${(props) => (props.hours && '100%') || '14.2%'};
-    height: 50px;
+    height: 8%;
     display: flex;
     align-items: center;
     justify-content: center;
