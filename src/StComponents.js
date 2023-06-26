@@ -51,7 +51,7 @@ const Body = styled.div`
     justify-content: space-between;
     flex-wrap: wrap;
     overflow-y: ${(props) => (props.workarea && 'scroll') || 'hidden'};
-    height: ${(props) => (props.workarea && '63%') || 'auto'};
+    height: ${(props) => (props.workarea && '65%') || 'auto'};
 `;
 
 const Hours = styled.div`
