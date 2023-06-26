@@ -7,7 +7,7 @@ const Frame = styled.div`
     border: 1px solid lightgrey;
     box-shadow: 2px 2px 2px #eee;
     overflow: hidden;
-    @media screen and ${devices.md} {
+    @media only screen and ${devices.md} {
         width: 90%;
     }
     @media only screen and (min-device-width: 320px) and (max-device-height: 812px) {
@@ -23,13 +23,12 @@ const Column = styled.div`
 const Header = styled.div`
     font-size: 18px;
     font-weight: bold;
-    padding: 10px 10px 5px 10px;
+    padding: 10px 10px 5px 10px; ${(props) => (props.initial && '10px 20px 5px 20px') || '10px 10px 5px 10px'};
     display: flex;
     align-items: center;
     justify-content: space-between;
     background-color: ${(props) => (props.initial && '#ffffff') || '#f5f6fa'};
     height: ${(props) => (props.initial && '9%') || '6%'};
-    }
 `;
 
 const Button = styled.div`
@@ -72,6 +71,10 @@ const Day = styled.div`
     background-color: ${(props) => (props.today && 'red' || 'transparent')};
     border-radius: ${(props) => (props.today && '50%' || '0%')};
     color: ${(props) => (props.today && '#ffffff' || '#000000')};
+    font-size: ${(props) => (props.weekday && '12px' || '18px')};
+    @media only screen and (min-device-width: 320px) and (max-device-height: 812px) {
+        font-size: ${(props) => (props.weekday && '17px' || '24px')};
+    }
 `;
 
 const WorkBlock = styled.div`
@@ -94,11 +97,17 @@ const WorkBlock = styled.div`
 
 const HeaderBlock = styled.div`
     cursor: pointer;
+    font-size: ${(props) => (props.plus && '24px' || '18px')};
+    color: ${(props) => (props.plus && 'red') || 'black'};
+    @media only screen and (min-device-width: 320px) and (max-device-height: 812px) {
+        font-size: ${(props) => (props.plus && '28px' || '22px')};
+    }
 `
 
 const FooterBlock = styled.div`
     display: ${(props) => (props.deleteBtn && 'none') || 'flex'};
     cursor: pointer;
+    color: red;
 `
 
 

@@ -8,7 +8,8 @@ function App() {
   const DAYS = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
   const DAYS_LEAP = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
   const DAYS_OF_THE_WEEK = ['M', 'T', 'W', 'T', 'F', 'S', 'S'];
-  const MONTHS = ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'];
+  const MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September',
+                           'October', 'November', 'December'];
 
   
 
@@ -87,13 +88,13 @@ function App() {
     <Frame>
       <Header key={'1'} initial ref ={wrapperRef}>
         <HeaderBlock key={'1'}>Interview Calendar</HeaderBlock>
-        <HeaderBlock key={'2'} onClick={plusButton}>+</HeaderBlock>
+        <HeaderBlock plus key={'2'} onClick={plusButton}>+</HeaderBlock>
       </Header>
       <Header key={'2'}>
         <Column></Column>
         <Body initial>
           {DAYS_OF_THE_WEEK.map((d) => (
-            <Day key={d.toString()}>
+            <Day weekday key={d.toString()}>
               {d}
             </Day>
           ))}
@@ -132,7 +133,7 @@ function App() {
       </Header>
       <Workarea giveRef={wrapperRef} workBgrnd={workBgrnd} data={interviews}></Workarea>
       <Header key={'5'} initial>
-        <FooterBlock key={'1'}>Today</FooterBlock>
+        <FooterBlock key={'1'} onClick={() => setDate(new Date())}>Today</FooterBlock>
         <FooterBlock key={'2'} deleteBtn ref={deleteRef} onClick={() => deleteInterview(interwiewToDelete)}>Delete</FooterBlock>
       </Header>
     </Frame>
